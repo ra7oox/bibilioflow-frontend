@@ -39,7 +39,7 @@ export const AuthPage = () => {
         console.log("🧹 localStorage nettoyé");
         
         // ÉTAPE 2 : Appeler l'endpoint de login dédié
-        const response = await fetch('http://localhost:5000/auth/login', {
+        const response = await fetch('https://biblioflow-production-022b.up.railway.app/auth/login', {
           method: 'POST',
           headers: { 
             'Content-Type': 'application/json',
