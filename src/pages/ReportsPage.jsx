@@ -34,7 +34,7 @@ export const ReportsPage = () => {
       setLoading(true);
 
       // Récupérer les signalements
-      let reportsUrl = 'http://localhost:5000/reports';
+      let reportsUrl = 'https://biblioflow-production-022b.up.railway.app/reports';
       if (!isAdmin) {
         // Les emprunteurs voient seulement leurs signalements
         reportsUrl += `?reportedByUserId=${currentUser.id}`;
