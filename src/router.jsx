@@ -66,7 +66,7 @@ export function AppRouter() {
   };
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/bibilioflow-frontend">
       <nav className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 py-4 px-4 md:px-8 flex justify-between items-center sticky top-0 z-50 shadow-sm transition-colors duration-200">
         
         {/* LOGO */}
