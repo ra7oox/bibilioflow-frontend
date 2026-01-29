@@ -10,7 +10,7 @@ export const SearchPage = () => {
     // US-01 : Afficher la liste des résultats (Fetch initial)
     const fetchBooks = async () => {
       try {
-        const response = await fetch('http://localhost:5000/books');
+        const response = await fetch('https://biblioflow-production-022b.up.railway.app/books');
         if (response.ok) {
           const data = await response.json();
           setBooks(data);
