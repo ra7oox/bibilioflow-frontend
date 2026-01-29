@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/biblioflow-frontend/static/css/main.bda59351.css",
-    "main.js": "/biblioflow-frontend/static/js/main.ef1072bd.js",
-    "static/js/453.20359781.chunk.js": "/biblioflow-frontend/static/js/453.20359781.chunk.js",
-    "index.html": "/biblioflow-frontend/index.html",
-    "main.bda59351.css.map": "/biblioflow-frontend/static/css/main.bda59351.css.map",
-    "main.ef1072bd.js.map": "/biblioflow-frontend/static/js/main.ef1072bd.js.map",
-    "453.20359781.chunk.js.map": "/biblioflow-frontend/static/js/453.20359781.chunk.js.map"
+    "main.css": "/bibilioflow-frontend/static/css/main.bda59351.css",
+    "main.js": "/bibilioflow-frontend/static/js/main.c3ca30da.js",
+    "static/js/453.20359781.chunk.js": "/bibilioflow-frontend/static/js/453.20359781.chunk.js",
+    "index.html": "/bibilioflow-frontend/index.html",
+    "main.bda59351.css.map": "/bibilioflow-frontend/static/css/main.bda59351.css.map",
+    "main.c3ca30da.js.map": "/bibilioflow-frontend/static/js/main.c3ca30da.js.map",
+    "453.20359781.chunk.js.map": "/bibilioflow-frontend/static/js/453.20359781.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bda59351.css",
-    "static/js/main.ef1072bd.js"
+    "static/js/main.c3ca30da.js"
   ]
 }
