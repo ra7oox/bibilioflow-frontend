@@ -28,7 +28,7 @@ export const BookDetailsPage = () => {
   useEffect(() => {
     const fetchBook = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/books/${id}`);
+        const res = await fetch(`https://biblioflow-production-022b.up.railway.app/${id}`);
         if (!res.ok) throw new Error("Échec de la récupération du livre");
         const bookData = await res.json();
         setBook(bookData);
