@@ -80,7 +80,7 @@ const handleSubmit = async (e) => {
   console.log(`Tentative d'envoi : ${sizeInMB} MB`);
 
   try {
-    const response = await fetch('http://localhost:5000/books', {
+    const response = await fetch('https://biblioflow-production-022b.up.railway.app/books', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newBook)
