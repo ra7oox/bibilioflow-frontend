@@ -25,7 +25,7 @@ export const ProfilePage = () => {
   // ====================================================================
   const fetchUserRating = async () => {
   try {
-    const response = await fetch(`http://localhost:5000/users/${currentUser.id}/rating`);
+    const response = await fetch(`https://biblioflow-production-022b.up.railway.app/${currentUser.id}/rating`);
     const data = await response.json();
     
     console.log('📊 Statistiques utilisateur:', data);
