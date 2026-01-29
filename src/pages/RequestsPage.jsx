@@ -26,8 +26,8 @@ export const RequestsPage = () => {
   const fetchRequests = async () => {
     try {
       let url = currentUser.role === 'preteur' 
-        ? `http://localhost:5000/requests?ownerName=${currentUser.name}`
-        : `http://localhost:5000/requests?requesterId=${currentUser.id}`;
+        ? `https://biblioflow-production-022b.up.railway.app/requests?ownerName=${currentUser.name}`
+        : `https://biblioflow-production-022b.up.railway.app/requests?requesterId=${currentUser.id}`;
       
       const response = await fetch(url);
       const data = await response.json();
@@ -52,7 +52,7 @@ export const RequestsPage = () => {
       }
 
       const requestResponse = await fetch(
-        `http://localhost:5000/requests/${request.id}`,
+        `https://biblioflow-production-022b.up.railway.app/${request.id}`,
         {
           method: 'PATCH',
           headers: { 'Content-Type': 'application/json' },
@@ -63,7 +63,7 @@ export const RequestsPage = () => {
       if (!requestResponse.ok) return;
 
       if (newStatus === 'accepted') {
-        await fetch(`http://localhost:5000/books/${request.bookId}`, {
+        await fetch(`https://biblioflow-production-022b.up.railway.app/${request.bookId}`, {
           method: 'PATCH',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ status: 'unavailable' }),
@@ -85,7 +85,7 @@ export const RequestsPage = () => {
   const handleCancelRequest = async () => {
     try {
       // Supprimer la demande
-      const response = await fetch(`http://localhost:5000/requests/${showCancelModal.id}`, {
+      const response = await fetch(`https://biblioflow-production-022b.up.railway.app/requests/${showCancelModal.id}`, {
         method: 'DELETE'
       });
 
@@ -147,7 +147,7 @@ export const RequestsPage = () => {
       // ============================================================
       // ÉTAPE 1 : ENVOI RÉEL DU RAPPEL VIA L'API
       // ============================================================
-      const sendResponse = await fetch(`http://localhost:5000/notifications/send`, {
+      const sendResponse = await fetch(`https://biblioflow-production-022b.up.railway.app/notifications/send`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -176,7 +176,7 @@ export const RequestsPage = () => {
       // ============================================================
       // ÉTAPE 2 : ENREGISTREMENT DANS L'HISTORIQUE
       // ============================================================
-      const response = await fetch(`http://localhost:5000/requests/${request.id}`, {
+      const response = await fetch(`https://biblioflow-production-022b.up.railway.app/requests/${request.id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
@@ -198,13 +198,13 @@ export const RequestsPage = () => {
   
   const handleConfirmReturn = async (req) => {
     try {
-      await fetch(`http://localhost:5000/requests/${req.id}`, {
+      await fetch(`https://biblioflow-production-022b.up.railway.app/requests/${req.id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ isFinished: true })
       });
 
-      await fetch(`http://localhost:5000/books/${req.bookId}`, {
+      await fetch(`https://biblioflow-production-022b.up.railway.app/books/${req.bookId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: 'available' })
@@ -240,7 +240,7 @@ export const RequestsPage = () => {
     };
 
     // Envoi de la notation au serveur
-    const response = await fetch(`http://localhost:5000/requests/${selectedRequestForRating.id}`, {
+    const response = await fetch(`https://biblioflow-production-022b.up.railway.app/requests/${selectedRequestForRating.id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ 
@@ -262,11 +262,11 @@ export const RequestsPage = () => {
             : selectedRequestForRating.ownerId;
 
           // Recalculer la note moyenne de cet utilisateur
-          const ratingResponse = await fetch(`http://localhost:5000/users/${ratedUserId}/rating`);
+          const ratingResponse = await fetch(`https://biblioflow-production-022b.up.railway.app/users/${ratedUserId}/rating`);
           const ratingStats = await ratingResponse.json();
 
           // Mettre à jour le profil de l'utilisateur avec sa nouvelle note
-          await fetch(`http://localhost:5000/users/${ratedUserId}/rating`, {
+          await fetch(`https://biblioflow-production-022b.up.railway.app/users/${ratedUserId}/rating`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -328,7 +328,7 @@ export const RequestsPage = () => {
       // ============================================================
       // ÉTAPE 1 : ENVOI DU SIGNALEMENT (NOTIFIE AUTO LES ADMINS)
       // ============================================================
-      const reportResponse = await fetch(`http://localhost:5000/reports`, {
+      const reportResponse = await fetch(`https://biblioflow-production-022b.up.railway.app/reports`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
@@ -354,7 +354,7 @@ export const RequestsPage = () => {
       // ============================================================
       // ÉTAPE 2 : MISE À JOUR DE LA DEMANDE
       // ============================================================
-      const updateResponse = await fetch(`http://localhost:5000/requests/${showReportModal.id}`, {
+      const updateResponse = await fetch(`https://biblioflow-production-022b.up.railway.app/requests/${showReportModal.id}`, {
         method: 'PATCH',
         headers: { 
           'Content-Type': 'application/json',
