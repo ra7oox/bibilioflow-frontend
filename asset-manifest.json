@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/bibilioflow-frontend/static/css/main.bda59351.css",
-    "main.js": "/bibilioflow-frontend/static/js/main.3267e733.js",
+    "main.js": "/bibilioflow-frontend/static/js/main.0092cc14.js",
     "static/js/453.20359781.chunk.js": "/bibilioflow-frontend/static/js/453.20359781.chunk.js",
     "index.html": "/bibilioflow-frontend/index.html",
     "main.bda59351.css.map": "/bibilioflow-frontend/static/css/main.bda59351.css.map",
-    "main.3267e733.js.map": "/bibilioflow-frontend/static/js/main.3267e733.js.map",
+    "main.0092cc14.js.map": "/bibilioflow-frontend/static/js/main.0092cc14.js.map",
     "453.20359781.chunk.js.map": "/bibilioflow-frontend/static/js/453.20359781.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bda59351.css",
-    "static/js/main.3267e733.js"
+    "static/js/main.0092cc14.js"
   ]
 }
